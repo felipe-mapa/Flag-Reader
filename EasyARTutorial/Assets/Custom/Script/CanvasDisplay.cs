@@ -24,7 +24,7 @@ public class CanvasDisplay : MonoBehaviour {
     }
 
     void Start(){
-        //canvasMain = GetComponent<Canvas>();
+        canvasMain = GetComponent<Canvas>();
     }
 
 }

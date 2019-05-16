@@ -11,13 +11,16 @@ public class ImageFinder : ImageTargetBehaviour {
     
     private string path;
     private string jsonString;
-    private string filePath = Application.streamingAssetsPath + "/country.json";
+    private string filePath;
     private string dataAsJson;
     private string target;
     Country[] loadedData;
 
     protected override void Awake() {
         base.Awake();
+        Debug.Log(Application.persistentDataPath);
+        filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "country.json");
+        UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(filePath);
         
         dataAsJson = File.ReadAllText (filePath);
         countryList = JsonUtility.FromJson<CountryList> (dataAsJson);
@@ -39,6 +42,8 @@ public class ImageFinder : ImageTargetBehaviour {
 
     private void OnDisable() {
         TargetFound -= OnTargetFound;
+        TargetLost -= OnTargetLost;
+
     }
 
     private void AddToDictionary(Country _country) {
@@ -74,9 +79,6 @@ public class ImageFinder : ImageTargetBehaviour {
 
     private void OnTargetLost(TargetAbstractBehaviour obj){
         target = "";
-
-        //Debug.Log(name + " lost");
-
     }
 
     protected override void Update() {
