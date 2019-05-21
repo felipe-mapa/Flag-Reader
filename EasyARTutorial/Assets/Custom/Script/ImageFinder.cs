@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Xml.Serialization;
 using EasyAR;
 using UnityEngine;
+using System.Linq;
 
 public class ImageFinder : ImageTargetBehaviour {
     public Dictionary<string, Country> countriesDict = new Dictionary<string, Country>();
     public static ImageFinder current;
     public CountryList countryList;
-    public Sprite contImage;
     
     private string path;
     private string jsonString;
@@ -16,22 +17,13 @@ public class ImageFinder : ImageTargetBehaviour {
     private string target;
     Country[] loadedData;
 
-    protected override void Awake() {
-        base.Awake();
-        Debug.Log(Application.persistentDataPath);
-        filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "country.json");
-        UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(filePath);
-        
-        dataAsJson = File.ReadAllText (filePath);
-        countryList = JsonUtility.FromJson<CountryList> (dataAsJson);
+    protected override void Start() {
+        base.Start();
+        countryList = JsonUtility.FromJson<CountryList>(JSONManager.instance.jsonData);
 
         foreach (Country c in countryList.countries) {
             AddToDictionary(c);
         }
-    }
-    
-    protected override void Start() {
-        base.Start();
     }
 
     private void OnEnable() {
@@ -39,11 +31,11 @@ public class ImageFinder : ImageTargetBehaviour {
         TargetLost += OnTargetLost;
     }
 
-
-    private void OnDisable() {
+    protected override void OnDestroy() {
+        base.OnDestroy();
+        
         TargetFound -= OnTargetFound;
         TargetLost -= OnTargetLost;
-
     }
 
     private void AddToDictionary(Country _country) {
@@ -54,8 +46,11 @@ public class ImageFinder : ImageTargetBehaviour {
         CanvasDisplay.instance.transform.SetParent(transform);
         current = this;
 
-        // Debug.Log(name + " found");
+        // disable secondary canvas
+        CanvasSecondary.instance.CanvasSec.enabled = false;
+
         CustomEvents.TrackingFound();
+        // Debug.Log(name + " found");
 
         foreach (Country c in countryList.countries) {
             // Debug.Log(c.targetName);
@@ -63,14 +58,24 @@ public class ImageFinder : ImageTargetBehaviour {
             target = c.targetName.ToString();
             
             if (target == name){
+
+                string getHdi = c.hdi.ToString();
+                string hdiColored = setHdiColor(getHdi);
+
+                // Getting Sprite icon
+                string continentName = c.continent.ToLower();
+                Sprite[] continentIcon = Resources.LoadAll<Sprite>("Continents/" + continentName);
+                Sprite iconSprite = continentIcon.Single(s => s.name == continentName);
+                // Debug.Log(iconSprite);
+
                 CanvasDisplay.instance.countryName.text = c.name;
                 CanvasDisplay.instance.capital.text = "Capital: " + c.capital;
                 CanvasDisplay.instance.continent.text = c.continent;
                 CanvasDisplay.instance.population.text = "Population: " + c.population;
-                CanvasDisplay.instance.hdi.text = c.hdi;
+                CanvasDisplay.instance.hdi.text = "<color=" + hdiColored + ">" + c.hdi + "</color>";
                 CanvasDisplay.instance.hdiName.text = "HDI";
                 CanvasDisplay.instance.contImage.enabled = true;
-                CanvasDisplay.instance.contImage.sprite = contImage;
+                CanvasDisplay.instance.contImage.sprite = iconSprite;
             }
         }
 
@@ -78,11 +83,33 @@ public class ImageFinder : ImageTargetBehaviour {
 
 
     private void OnTargetLost(TargetAbstractBehaviour obj){
-        target = "";
+        CustomEvents.TrackingLost();
+        CanvasSecondary.instance.CanvasSec.enabled = true;        
     }
 
     protected override void Update() {
         base.Update();
     }
 
+    string setHdiColor(string hdi){
+        float intHdi = float.Parse(hdi);
+        string hdiColored = "#000";
+        if (intHdi > 0.900){
+            hdiColored = "#003c00";
+        } else if (intHdi > 0.800){
+            hdiColored = "#00c400";            
+        } else if (intHdi > 0.700){
+            hdiColored = "#d3ff00";            
+        } else if (intHdi > 0.600){
+            hdiColored = "#ffd215";            
+        } else if (intHdi > 0.500){
+            hdiColored = "#ff852f";            
+        } else if (intHdi > 0.400){
+            hdiColored = "#ff852f";            
+        } else {
+            hdiColored = "#a70000";  
+        }
+
+        return hdiColored;
+    }
 }

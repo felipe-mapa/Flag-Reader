@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EasyAR.unity
     guid: 79d26d5d59f8461469c121a00d1efd51
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FlagAR.unity
     guid: a34704165d118446487b7730180d0611
   m_configObjects: {}
