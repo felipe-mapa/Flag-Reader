@@ -17,7 +17,7 @@ public class CanvasDisplay : MonoBehaviour {
     public Image contImage;
 
     private Country country;
-    private Canvas canvasMain;
+    public Canvas canvasMain;
 
     private void Awake() {
         instance = this;
@@ -25,6 +25,7 @@ public class CanvasDisplay : MonoBehaviour {
 
     void Start(){
         canvasMain = GetComponent<Canvas>();
+        canvasMain.enabled = false;
     }
 
 }

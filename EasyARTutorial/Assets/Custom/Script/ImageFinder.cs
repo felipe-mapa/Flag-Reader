@@ -46,14 +46,16 @@ public class ImageFinder : ImageTargetBehaviour {
         CanvasDisplay.instance.transform.SetParent(transform);
         current = this;
 
-        // disable secondary canvas
-        CanvasSecondary.instance.CanvasSec.enabled = false;
+        // disable secondary canvas and enable main
+        CanvasSecondary.instance.canvasSec.enabled = false;
+        CanvasDisplay.instance.canvasMain.enabled = true;
 
+        //Debug.Log(name + " found");
+        
         CustomEvents.TrackingFound();
-        // Debug.Log(name + " found");
 
         foreach (Country c in countryList.countries) {
-            // Debug.Log(c.targetName);
+            //Debug.Log(c.targetName);
             
             target = c.targetName.ToString();
             
@@ -64,14 +66,14 @@ public class ImageFinder : ImageTargetBehaviour {
 
                 // Getting Sprite icon
                 string continentName = c.continent.ToLower();
-                Sprite[] continentIcon = Resources.LoadAll<Sprite>("Continents/" + continentName);
+                Sprite[] continentIcon = Resources.LoadAll<Sprite>("Texture/Continents/" + continentName);
                 Sprite iconSprite = continentIcon.Single(s => s.name == continentName);
                 // Debug.Log(iconSprite);
 
                 CanvasDisplay.instance.countryName.text = c.name;
-                CanvasDisplay.instance.capital.text = "Capital: " + c.capital;
+                CanvasDisplay.instance.capital.text = " Capital: " + c.capital;
                 CanvasDisplay.instance.continent.text = c.continent;
-                CanvasDisplay.instance.population.text = "Population: " + c.population;
+                CanvasDisplay.instance.population.text = " Population: " + c.population;
                 CanvasDisplay.instance.hdi.text = "<color=" + hdiColored + ">" + c.hdi + "</color>";
                 CanvasDisplay.instance.hdiName.text = "HDI";
                 CanvasDisplay.instance.contImage.enabled = true;
@@ -84,7 +86,7 @@ public class ImageFinder : ImageTargetBehaviour {
 
     private void OnTargetLost(TargetAbstractBehaviour obj){
         CustomEvents.TrackingLost();
-        CanvasSecondary.instance.CanvasSec.enabled = true;        
+        CanvasSecondary.instance.canvasSec.enabled = true;        
     }
 
     protected override void Update() {

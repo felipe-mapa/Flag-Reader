@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CanvasSecondary : MonoBehaviour{
     public static CanvasSecondary instance;
     public Button helpButton;
-    public Canvas CanvasSec;
+    public Canvas canvasSec;
 
     private void Awake() {
         instance = this;   

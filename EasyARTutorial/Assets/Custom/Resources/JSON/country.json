@@ -19,7 +19,7 @@
         {
             "targetName": "FijiTarget",
             "name": "Fiji",
-            "capital": "Surva",
+            "capital": "Suva",
             "continent": "Oceania",
             "population": "917,934",
             "hdi": "0.741"
@@ -39,6 +39,151 @@
             "continent": "North America",
             "population": "328,799,346",
             "hdi": "0.924"
+        },
+        {
+            "targetName": "AlbaniaTarget",
+            "name": "Albania",
+            "capital": "Tirana",
+            "continent": "Europe",
+            "population": "2,876,591",
+            "hdi": "0.785"
+        },
+        {
+            "targetName": "CanadaTarget",
+            "name": "Canada",
+            "capital": "Ottawa",
+            "continent": "North America",
+            "population": "37,314,442",
+            "hdi": "0.926"
+        },
+        {
+            "targetName": "SpainTarget",
+            "name": "Spain",
+            "capital": "Madrid",
+            "continent": "Europe",
+            "population": "46,733,038",
+            "hdi": "0.891"
+        },
+        {
+            "targetName": "ZimbabweTarget",
+            "name": "Zimbabwe",
+            "capital": "Harare",
+            "continent": "Africa",
+            "population": "16,150,362",
+            "hdi": "0.535"
+        },
+        {
+            "targetName": "CroatiaTarget",
+            "name": "Croatia",
+            "capital": "Zagreb",
+            "continent": "Europe",
+            "population": "4,154,200",
+            "hdi": "0.831"
+        },
+        {
+            "targetName": "EswatiniTarget",
+            "name": "Eswatini",
+            "capital": "Mbabane",
+            "continent": "Africa",
+            "population": "1,343,098",
+            "hdi": "0.588"
+        },
+        {
+            "targetName": "BosniaHTarget",
+            "name": "Bosnia & Herzegovina",
+            "capital": "Sarajevo",
+            "continent": "Europe",
+            "population": "3,511,372",
+            "hdi": "0.768"
+        },
+        {
+            "targetName": "IndiaTarget",
+            "name": "India",
+            "capital": "New Delhi",
+            "continent": "Asia",
+            "population": "1,367,108,025",
+            "hdi": "0.640"
+        },
+        {
+            "targetName": "KazakhstanTarget",
+            "name": "Kazakhstan",
+            "capital": "Nur-Sultan",
+            "continent": "Asia",
+            "population": "18,311,700",
+            "hdi": "0.800"
+        },
+        {
+            "targetName": "MalaysiaTarget",
+            "name": "Malaysia",
+            "capital": "Kuala Lumpur",
+            "continent": "Asia",
+            "population": "32,049,700",
+            "hdi": "0.802"
+        },
+        {
+            "targetName": "MongoliaTarget",
+            "name": "Mongolia",
+            "capital": "Ulaanbaatar",
+            "continent": "Asia",
+            "population": "3,256,176",
+            "hdi": "0.741"
+        },
+        {
+            "targetName": "SriLankaTarget",
+            "name": "Sri Lanka",
+            "capital": "Sri J. Kotte",
+            "continent": "Asia",
+            "population": "21,670,000",
+            "hdi": "0.770"
+        },
+        {
+            "targetName": "PortugalTarget",
+            "name": "Portugal",
+            "capital": "Lisbon",
+            "continent": "Europe",
+            "population": "10,291,027",
+            "hdi": "0.847"
+        },
+        {
+            "targetName": "KenyaTarget",
+            "name": "Kenya",
+            "capital": "Nairobi",
+            "continent": "Africa",
+            "population": "49,364,325",
+            "hdi": "0.590"
+        }
+        ,
+        {
+            "targetName": "SlovakiaTarget",
+            "name": "Slovakia",
+            "capital": "Bratislava",
+            "continent": "Europe",
+            "population": "5,450,421",
+            "hdi": "0.855"
+        },
+        {
+            "targetName": "MexicoTarget",
+            "name": "Mexico",
+            "capital": "Mexico City",
+            "continent": "North America",
+            "population": "126,577,691",
+            "hdi": "0.774"
+        },
+        {
+            "targetName": "SaudiArabiaTarget",
+            "name": "Saudi Arabia",
+            "capital": "Riyadh",
+            "continent": "Asia",
+            "population": "33,000,000",
+            "hdi": "0.853"
+        },
+        {
+            "targetName": "PapuaNewGuineaTarget",
+            "name": "Papua New Guinea",
+            "capital": "Port Moresby",
+            "continent": "Oceania",
+            "population": "8,084,999",
+            "hdi": "0.544"
         }
     ]
 }
