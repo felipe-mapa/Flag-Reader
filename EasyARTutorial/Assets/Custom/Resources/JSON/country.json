@@ -17,6 +17,14 @@
             "hdi": "0.759"
         },
         {
+            "targetName": "PeruTarget",
+            "name": "Peru",
+            "capital": "Lima",
+            "continent": "South America",
+            "population": "32,495,510",
+            "hdi": "0.750"
+        },
+        {
             "targetName": "FijiTarget",
             "name": "Fiji",
             "capital": "Suva",

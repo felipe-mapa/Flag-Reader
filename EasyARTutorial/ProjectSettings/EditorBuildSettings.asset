@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EasyAR.unity
     guid: 79d26d5d59f8461469c121a00d1efd51
   - enabled: 0
-    path: Assets/Scenes/FlagAR.unity
+    path: Assets/Custom/Script/FlagAR.unity
     guid: a34704165d118446487b7730180d0611
+  - enabled: 0
+    path: Assets/Scenes/ExportAndroidStudio.unity
+    guid: 443700e0b001fdb4aa583c419eec5f16
   m_configObjects: {}

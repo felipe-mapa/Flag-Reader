@@ -97,7 +97,7 @@ public class ImageFinder : ImageTargetBehaviour {
         float intHdi = float.Parse(hdi);
         string hdiColored = "#000";
         if (intHdi > 0.900){
-            hdiColored = "#003c00";
+            hdiColored = "#287E28";
         } else if (intHdi > 0.800){
             hdiColored = "#00c400";            
         } else if (intHdi > 0.700){

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MenuButtons : MonoBehaviour {
     public static MenuButtons instance;
     public Button startButton;
-    public Button listButton;
+    // public Button listButton;
     public Button quitButton;
     public CanvasGroup uiElement;
 
@@ -16,7 +16,7 @@ public class MenuButtons : MonoBehaviour {
     private void Awake() {
         menuCanvas = GetComponent<Canvas>();
         startButton.onClick.AddListener(() => disableCanvas());
-        listButton.onClick.AddListener(() => quitApp());
+        // listButton.onClick.AddListener(() => quitApp());
         quitButton.onClick.AddListener(() => quitApp());
 
         instance = this;
