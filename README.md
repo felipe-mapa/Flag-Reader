@@ -26,7 +26,7 @@ Initially, the plan was to use Vuforia because that was the technology I learnt 
 ##### Why not Google ARCore
 After Vuforia, I thought Google ARCore would be the best and most advanced option for Image Recognition, however, it ended up having the lowest performace in my comparison test. It was also the hardest technology to implement.
 
-#### Why EasyAR
+##### Why EasyAR
 I ran the same test, with the same flags, and it had the best performance (find results below). It was still not 100%, but it was very close to the results I was looking for. Also, it had the easiest way of implementation, even though the documentation wasn't very good at that moment.
 
 | Flags country | Vuforia | ARCore | EasyAR    |
@@ -38,6 +38,7 @@ I ran the same test, with the same flags, and it had the best performance (find 
 | New Zealand   | Yes     | No     | Yes*      |
 | Thailand      | No      | No     | No        |
 | USA           | No      | No     | Sometimes |
+
 *Australian and New Zealand flags can be mistaken as a result of their similarities. 
 
 ---
