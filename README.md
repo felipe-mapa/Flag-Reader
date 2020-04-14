@@ -35,7 +35,7 @@ I ran the same test, with the same flags, and it had the best performance (find 
 | Brazil        | Yes     | No     | Yes       |
 | Fiji          | No      | Yes    | Yes       |
 | Japan         | No      | No     | No        |
-| New Zealand   | Yes     | No     | Yes*      |
+| New Zealand   | Yes*    | No     | Yes*      |
 | Thailand      | No      | No     | No        |
 | USA           | No      | No     | Sometimes |
 
